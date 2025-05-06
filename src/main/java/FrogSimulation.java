@@ -8,8 +8,8 @@ public class FrogSimulation {
     }
 
     private int hopDistance() {
-        // example stub: you can replace this with actual logic or randomness
-        return (int)(Math.random() * 11) - 5; // hops from -5 to +5
+        
+        return (int)(Math.random() * 11) - 5;
     }
 
     public boolean simulate() {
