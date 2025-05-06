@@ -13,17 +13,34 @@ public class FrogSimulation
 	//private int hopDistance() 
 	//implementation is below, but not important
 	
-	public boolean simulate()
-	{ 
-		/* to be implemented in part (a) */
+	public boolean simulate() {
+    int position = 0;
 
-	}
+    for (int i = 0; i < maxHops; i++) {
+        position += hopDistance();
+
+        if (position >= goalDistance) {
+            return true;
+        } else if (position < 0) {
+            return false;
+        }
+    }
+
+    return false;
+}
 	
-	public double runSimulations(int num)
-	{ 
-		/* to be implemented in part (b) */ 
+	public double runSimulations(int num) {
+    int successCount = 0;
 
-	}
+    for (int i = 0; i < num; i++) {
+        if (simulate()) {
+            successCount++;
+        }
+    }
+
+    return (double) successCount / num;
+}
+}
 	
 	
 	//ignore the code below this line
