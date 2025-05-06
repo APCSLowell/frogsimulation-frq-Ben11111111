@@ -8,36 +8,32 @@ public class FrogSimulation {
     }
 
     private int hopDistance() {
-        
-        return (int)(Math.random() * 11) - 5;
+        return (int)(Math.random() * 11) - 5; // Random int from -5 to 5
     }
 
     public boolean simulate() {
         int position = 0;
-
         for (int i = 0; i < maxHops; i++) {
             position += hopDistance();
-
             if (position >= goalDistance) {
                 return true;
             } else if (position < 0) {
                 return false;
             }
         }
-
         return false;
     }
-public double runSimulations(int num) {
-    int successes = 0;
-    for (int i = 0; i < num; i++) {
-        if (simulate()) {
-            successes++;
-        }
-    }
-    return (double) successes / num;
-}
-}
 
+    public double runSimulations(int num) {
+        int successes = 0;
+        for (int i = 0; i < num; i++) {
+            if (simulate()) {
+                successes++;
+            }
+        }
+        return (double) successes / num;
+    }
+}
 	
 	
 	//ignore the code below this line
