@@ -27,18 +27,15 @@ public class FrogSimulation {
 
         return false;
     }
-
-    public double runSimulations(int num) {
-        int successCount = 0;
-
-        for (int i = 0; i < num; i++) {
-            if (simulate()) {
-                successCount++;
-            }
+public double runSimulations(int num) {
+    int successes = 0;
+    for (int i = 0; i < num; i++) {
+        if (simulate()) {
+            successes++;
         }
-
-        return (double) successCount / num;
     }
+    return (double) successes / num;
+}
 }
 
 	
